@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#090b14">
+  <title>ヒロアカ キャラクタールーレット</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="background-grid" aria-hidden="true"></div>
+
+  <main class="container">
+    <header class="hero-header">
+      <p class="eyebrow">MY HERO ACADEMIA</p>
+      <h1>キャラクタールーレット</h1>
+      <p class="subtitle">運命のヒーローを選べ！</p>
+    </header>
+
+    <section class="roulette-card" aria-label="キャラクタールーレット">
+      <div class="status-bar">
+        <span class="status-dot"></span>
+        <span id="statusText">ルーレット待機中</span>
+        <span class="odds">全キャラ均等確率</span>
+      </div>
+
+      <div id="resultPanel" class="result-panel" aria-live="polite">
+        <div class="image-frame">
+          <div class="speed-lines" aria-hidden="true"></div>
+          <img id="characterImage" src="" alt="キャラクター画像">
+          <div id="imageFallback" class="image-fallback" hidden>キャラクター画像</div>
+        </div>
+
+        <div class="character-info">
+          <p id="heroName" class="hero-name">？？？</p>
+          <h2 id="characterName">キャラクターを選出</h2>
+          <div class="quirk-row">
+            <span class="quirk-label">個性</span>
+            <strong id="quirk">不明</strong>
+          </div>
+          <p id="description" class="description">スタートボタンを押して運命を決めよう。</p>
+        </div>
+      </div>
+
+      <button id="startButton" class="start-button" type="button">
+        <span class="button-glow"></span>
+        <span id="buttonText">ルーレット開始</span>
+      </button>
+    </section>
+
+    <section class="history-section" aria-labelledby="historyTitle">
+      <div class="history-header">
+        <h2 id="historyTitle">選出履歴 <span>LAST 10</span></h2>
+        <button id="clearHistory" class="clear-button" type="button">履歴クリア</button>
+      </div>
+      <div id="historyList" class="history-list">
+        <p class="empty-history">まだ履歴がありません</p>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
